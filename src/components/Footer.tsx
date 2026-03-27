@@ -81,20 +81,20 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-amber-400 mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">123 Knowledge Park, Tech City, Maharashtra 411001</span>
+                <span className="text-white/70 text-sm">Doddaballapur Main Road, Avalahalli, Yelahanka, Bengaluru – 560119</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-amber-400 flex-shrink-0" />
-                <span className="text-white/70 text-sm">+91 20 1234 5678</span>
+                <span className="text-white/70 text-sm">+91 80 6873 0444</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-amber-400 flex-shrink-0" />
-                <span className="text-white/70 text-sm">info@vit.edu.in</span>
+                <span className="text-white/70 text-sm">principal@bmsit.in</span>
               </li>
             </ul>
             <div className="mt-4 p-3 bg-amber-400/10 border border-amber-400/20 rounded-lg">
               <p className="text-xs text-amber-300 font-semibold">Admission Helpline</p>
-              <p className="text-white text-sm font-bold">1800-XXX-XXXX</p>
+              <p className="text-white text-sm font-bold">080-26146800 / 080-26146856</p>
               <p className="text-white/60 text-xs">Mon-Sat, 9 AM - 5 PM</p>
             </div>
           </div>
