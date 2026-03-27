@@ -188,6 +188,78 @@ function AboutPage() {
           </div>
         </div>
 
+        {/* Accreditations */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-[#1e3a5f] dark:text-white text-center mb-10">Accreditations & Approvals</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Core Accreditations */}
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 border border-amber-200 dark:border-amber-800/30">
+              <h3 className="text-xl font-bold text-[#1e3a5f] dark:text-amber-400 mb-6">🏅 Core Accreditations</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3 p-3 rounded-lg bg-white/50 dark:bg-slate-700/50">
+                  <span className="text-amber-600 dark:text-amber-400 font-bold mt-1">✓</span>
+                  <div>
+                    <p className="font-semibold text-[#1e3a5f] dark:text-white">NAAC Accreditation</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">Accredited with 'A' Grade (CGPA: 3.21) valid till 2026</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 p-3 rounded-lg bg-white/50 dark:bg-slate-700/50">
+                  <span className="text-amber-600 dark:text-amber-400 font-bold mt-1">✓</span>
+                  <div>
+                    <p className="font-semibold text-[#1e3a5f] dark:text-white">NBA Accreditation</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">7 UG Programs + 2 PG Programs</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Government Approvals */}
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-800 border border-blue-200 dark:border-blue-800/30">
+              <h3 className="text-xl font-bold text-[#1e3a5f] dark:text-blue-400 mb-6">✔️ Government Approvals</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 p-2">
+                  <span className="text-[#1e3a5f] dark:text-blue-400 font-bold">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">AICTE Approved (All India Council for Technical Education)</span>
+                </li>
+                <li className="flex items-center gap-3 p-2">
+                  <span className="text-[#1e3a5f] dark:text-blue-400 font-bold">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">UGC Recognized (Section 12B) – Eligible for central funding</span>
+                </li>
+                <li className="flex items-center gap-3 p-2">
+                  <span className="text-[#1e3a5f] dark:text-blue-400 font-bold">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Affiliated to VTU (Visvesvaraya Technological University)</span>
+                </li>
+                <li className="flex items-center gap-3 p-2">
+                  <span className="text-[#1e3a5f] dark:text-blue-400 font-bold">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Autonomous Status (2020–2030)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* NBA Accredited Branches */}
+          <div className="mt-8 p-8 rounded-2xl bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700">
+            <h3 className="text-lg font-bold text-[#1e3a5f] dark:text-white mb-4">🎓 NBA Accredited Programs</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                'Computer Science Engineering (CSE)',
+                'Information Science Engineering (ISE)',
+                'Electronics & Communication Engineering (ECE)',
+                'Electrical & Electronics Engineering (EEE)',
+                'Electronics & Telecommunication Engineering (ETE)',
+                'Mechanical Engineering',
+                'Civil Engineering',
+                'MCA',
+                'M.Tech (CSE)',
+              ].map((prog, i) => (
+                <div key={i} className="p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800">
+                  <p className="text-sm font-semibold text-[#1e3a5f] dark:text-amber-400">{prog}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Milestones */}
         <div>
           <h2 className="text-2xl font-bold text-[#1e3a5f] dark:text-white text-center mb-10">Our Journey</h2>

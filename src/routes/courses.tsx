@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { departments, faculty } from '@/data/mockData'
-import { Users, BookOpen, FlaskConical, ChevronRight, Search } from 'lucide-react'
+import { departments } from '@/data/mockData'
+import { ChevronRight, Search } from 'lucide-react'
 
 export const Route = createFileRoute('/courses')({
   component: CoursesPage,
@@ -9,7 +9,6 @@ export const Route = createFileRoute('/courses')({
 
 function CoursesPage() {
   const [search, setSearch] = useState('')
-  const [selected, setSelected] = useState<number | null>(null)
 
   const categories = [
     'Engineering & Technology',
@@ -32,7 +31,6 @@ function CoursesPage() {
     red: 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800',
   }
 
-  const dept = selected !== null ? departments.find(d => d.id === selected) : null
 
   return (
     <div className="dark:bg-slate-900 min-h-screen">
@@ -67,61 +65,27 @@ function CoursesPage() {
 
             return (
               <div key={category}>
-                <h2 className="text-2xl font-bold text-[#1e3a5f] dark:text-white mb-6">{category}</h2>
+                <h2 className="text-2xl font-bold text-[#1e3a8a] mb-6">{category}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {categoryDepts.map(dept => (
-                    <div
-                      key={dept.id}
-                      className={`card-hover rounded-2xl border-2 ${colorMap[dept.color]} cursor-pointer transition-all`}
-                      onClick={() => setSelected(selected === dept.id ? null : dept.id)}
-                    >
-                      <div className="p-6">
-                        <div className="flex items-start justify-between mb-4">
-                          <span className="text-4xl">{dept.icon}</span>
-                          <span className="bg-[#1e3a5f] text-white text-xs font-bold px-3 py-1 rounded-full">{dept.code}</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-[#1e3a5f] dark:text-white mb-2">{dept.name}</h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{dept.description}</p>
-                        <div className="flex items-center gap-4 text-sm">
-                          <div className="flex items-center gap-1 text-blue-600 dark:text-blue-400">
-                            <Users size={14} />
-                            <span>{dept.students} Students</span>
-                          </div>
-                          <div className="flex items-center gap-1 text-green-600 dark:text-green-400">
-                            <BookOpen size={14} />
-                            <span>{dept.faculty} Faculty</span>
-                          </div>
-                        </div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">HOD: {dept.hod}</p>
+                    <div key={dept.id} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                      <h3 className="text-xl font-bold text-[#1e3a8a] mb-2">{dept.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{dept.description}</p>
+
+                      <div className="text-sm text-gray-700 space-y-1 mb-4">
+                        <p><strong>Program:</strong> {dept.programs}</p>
+                        <p><strong>HoD:</strong> {dept.hod}</p>
+                        <p><strong>Affiliation:</strong> VTU, Belagavi</p>
+                        <p><strong>Accreditation:</strong> NBA Accredited</p>
+                        <p><strong>Focus Areas:</strong> {dept.focusAreas}</p>
                       </div>
 
-                      {selected === dept.id && (
-                        <div className="border-t border-current/10 p-6 space-y-4">
-                          <div>
-                            <h4 className="font-semibold text-[#1e3a5f] dark:text-white text-sm mb-2 flex items-center gap-1">
-                              <BookOpen size={14} /> Programs Offered
-                            </h4>
-                            <div className="flex flex-wrap gap-2">
-                              {dept.courses.map((c, i) => (
-                                <span key={i} className="text-xs bg-[#1e3a5f] text-white px-3 py-1 rounded-full">{c}</span>
-                              ))}
-                            </div>
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-[#1e3a5f] dark:text-white text-sm mb-2 flex items-center gap-1">
-                              <FlaskConical size={14} /> Laboratories
-                            </h4>
-                            <ul className="space-y-1">
-                              {dept.labs.map((lab, i) => (
-                                <li key={i} className="text-xs text-gray-600 dark:text-gray-300 flex items-center gap-2">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
-                                  {lab}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      )}
+                      <a
+                        href="#"
+                        className="inline-block px-4 py-2 bg-[#1e3a8a] text-white rounded-md text-sm font-medium hover:bg-blue-800"
+                      >
+                        View Details
+                      </a>
                     </div>
                   ))}
                 </div>

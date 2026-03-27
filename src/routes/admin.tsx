@@ -217,9 +217,9 @@ function AdminPage() {
               <div className="mt-6">
                 <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-3 text-sm">Demo Users</h4>
                 {[
-                  { name: 'Aarav Sharma', email: 'student@vit.edu.in', role: 'Student', dept: 'CSE Year 3' },
-                  { name: 'Dr. Admin Singh', email: 'admin@vit.edu.in', role: 'Admin', dept: 'Administration' },
-                  { name: 'Arjun Mehta', email: 'alumni@vit.edu.in', role: 'Alumni', dept: 'CSE 2018' },
+                  { name: 'Aarav Sharma', email: 'student@bmsit.edu.in', role: 'Student', dept: 'CSE Year 3' },
+                  { name: 'Dr. Admin Singh', email: 'admin@bmsit.edu.in', role: 'Admin', dept: 'Administration' },
+                  { name: 'Arjun Mehta', email: 'alumni@bmsit.edu.in', role: 'Alumni', dept: 'CSE 2018' },
                 ].map((u, i) => (
                   <div key={i} className="flex items-center justify-between py-3 border-b border-gray-100 dark:border-slate-700">
                     <div>

@@ -23,6 +23,7 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CircularsRouteImport } from './routes/circulars'
+import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as AlumniRouteImport } from './routes/alumni'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AdminRouteImport } from './routes/admin'
@@ -100,6 +101,11 @@ const CircularsRoute = CircularsRouteImport.update({
   path: '/circulars',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApplyRoute = ApplyRouteImport.update({
+  id: '/apply',
+  path: '/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AlumniRoute = AlumniRouteImport.update({
   id: '/alumni',
   path: '/alumni',
@@ -137,6 +143,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/admissions': typeof AdmissionsRoute
   '/alumni': typeof AlumniRoute
+  '/apply': typeof ApplyRoute
   '/circulars': typeof CircularsRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
@@ -159,6 +166,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/admissions': typeof AdmissionsRoute
   '/alumni': typeof AlumniRoute
+  '/apply': typeof ApplyRoute
   '/circulars': typeof CircularsRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
@@ -182,6 +190,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/admissions': typeof AdmissionsRoute
   '/alumni': typeof AlumniRoute
+  '/apply': typeof ApplyRoute
   '/circulars': typeof CircularsRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
@@ -206,6 +215,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admissions'
     | '/alumni'
+    | '/apply'
     | '/circulars'
     | '/contact'
     | '/courses'
@@ -228,6 +238,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admissions'
     | '/alumni'
+    | '/apply'
     | '/circulars'
     | '/contact'
     | '/courses'
@@ -250,6 +261,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admissions'
     | '/alumni'
+    | '/apply'
     | '/circulars'
     | '/contact'
     | '/courses'
@@ -273,6 +285,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AdmissionsRoute: typeof AdmissionsRoute
   AlumniRoute: typeof AlumniRoute
+  ApplyRoute: typeof ApplyRoute
   CircularsRoute: typeof CircularsRoute
   ContactRoute: typeof ContactRoute
   CoursesRoute: typeof CoursesRoute
@@ -390,6 +403,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CircularsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/apply': {
+      id: '/apply'
+      path: '/apply'
+      fullPath: '/apply'
+      preLoaderRoute: typeof ApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/alumni': {
       id: '/alumni'
       path: '/alumni'
@@ -441,6 +461,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   AdmissionsRoute: AdmissionsRoute,
   AlumniRoute: AlumniRoute,
+  ApplyRoute: ApplyRoute,
   CircularsRoute: CircularsRoute,
   ContactRoute: ContactRoute,
   CoursesRoute: CoursesRoute,

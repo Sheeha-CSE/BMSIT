@@ -7,14 +7,14 @@ export const Route = createFileRoute('/admissions')({
 
 function AdmissionsPage() {
   const programs = [
-    { name: 'B.Tech (4 Years)', seats: '720 seats across 6 branches', eligibility: '10+2 PCM, JEE Main Score', fee: '₹1.2 Lakhs/year', intake: 'July 2024' },
-    { name: 'M.Tech (2 Years)', seats: '120 seats across 5 specializations', eligibility: 'B.Tech/B.E. in relevant field, GATE', fee: '₹80,000/year', intake: 'July 2024' },
-    { name: 'Ph.D (3-5 Years)', seats: 'Limited seats, interview-based', eligibility: 'M.Tech/M.E. with 60%+ marks', fee: '₹50,000/year', intake: 'January & July' },
-    { name: 'Lateral Entry B.Tech', seats: '10% of total B.Tech seats', eligibility: 'Diploma in Engineering, 60%+', fee: '₹1.2 Lakhs/year', intake: 'July 2024' },
+    { name: 'B.Tech (4 Years)', seats: '480 seats across 7 branches', eligibility: '10+2 PCM, JEE Main Score', fee: '₹1.5 Lakhs/year', intake: 'July 2024' },
+    { name: 'M.Tech (2 Years)', seats: '90 seats across 4 specializations', eligibility: 'B.Tech/B.E. in relevant field, GATE', fee: '₹90,000/year', intake: 'July 2024' },
+    { name: 'Ph.D (3-5 Years)', seats: 'Limited seats, interview-based', eligibility: 'M.Tech/M.E. with 60%+ marks', fee: '₹40,000/year', intake: 'January & July' },
+    { name: 'Lateral Entry B.Tech', seats: '8% of total B.Tech seats', eligibility: 'Diploma in Engineering, 60%+', fee: '₹1.5 Lakhs/year', intake: 'July 2024' },
   ]
 
   const steps = [
-    { step: 1, title: 'Fill Online Application', desc: 'Register and complete the online application form at vit.edu.in/apply' },
+    { step: 1, title: 'Fill Online Application', desc: 'Register and complete the online application form at /apply' },
     { step: 2, title: 'Upload Documents', desc: 'Upload 10th & 12th marksheets, JEE score, passport photo, and ID proof' },
     { step: 3, title: 'Pay Application Fee', desc: 'Pay Rs 500 application fee online via UPI, Net Banking, or Card' },
     { step: 4, title: 'Merit List / Counseling', desc: 'Check merit list on portal. Attend online/offline counseling' },
@@ -30,8 +30,8 @@ function AdmissionsPage() {
             <ChevronRight size={14} />
             <span>Admissions</span>
           </div>
-          <h1 className="text-4xl font-bold mb-3">Admissions 2024-25</h1>
-          <p className="text-white/80 max-w-2xl">Applications are now open for B.Tech, M.Tech, and Ph.D programs. Limited seats — apply early!</p>
+          <h1 className="text-4xl font-bold mb-3">BMSIT Admissions 2024-25</h1>
+          <p className="text-white/80 max-w-2xl">Join BMS Institute of Technology's world-class programs. Applications now open for B.Tech, M.Tech, and Ph.D. Limited seats — apply early!</p>
           <div className="mt-6 inline-flex items-center gap-2 bg-amber-400 text-[#1e3a5f] font-bold px-6 py-3 rounded-xl">
             <Calendar size={18} />
             Application Deadline: June 30, 2024
@@ -62,9 +62,12 @@ function AdmissionsPage() {
                   </div>
                 ))}
               </div>
-              <button className="mt-4 w-full bg-[#1e3a5f] hover:bg-[#152b47] text-white font-semibold py-2.5 rounded-xl transition-colors">
+              <a
+                href="/apply"
+                className="mt-4 inline-flex w-full items-center justify-center bg-[#1e3a5f] hover:bg-[#152b47] text-white font-semibold py-2.5 rounded-xl transition-colors"
+              >
                 Apply for {prog.name.split(' ')[0]}
-              </button>
+              </a>
             </div>
           ))}
         </div>
@@ -113,7 +116,7 @@ function AdmissionsPage() {
             </div>
             <div className="flex items-center gap-2">
               <Phone size={18} className="text-amber-400" />
-              <span className="font-semibold">admissions@vit.edu.in</span>
+              <span className="font-semibold">admissions@bmsit.edu.in</span>
             </div>
           </div>
         </div>

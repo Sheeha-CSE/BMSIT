@@ -20,6 +20,7 @@ const navItems = [
   {
     label: 'Admissions',
     children: [
+      { label: 'Apply Now', path: '/apply' },
       { label: 'Admissions Info', path: '/admissions' },
       { label: 'FAQ', path: '/faq' },
     ],

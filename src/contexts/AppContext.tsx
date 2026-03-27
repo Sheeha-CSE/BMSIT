@@ -58,12 +58,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('vit-theme')
+    const savedTheme = localStorage.getItem('bmsit-theme')
     if (savedTheme === 'dark') {
       setIsDark(true)
       document.documentElement.classList.add('dark')
     }
-    const savedUser = localStorage.getItem('vit-user')
+    const savedUser = localStorage.getItem('bmsit-user')
     if (savedUser) {
       try { setUser(JSON.parse(savedUser)) } catch {}
     }
@@ -73,7 +73,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const found = mockUsers[email.toLowerCase()]
     if (found) {
       setUser(found)
-      localStorage.setItem('vit-user', JSON.stringify(found))
+      localStorage.setItem('bmsit-user', JSON.stringify(found))
       return true
     }
     return false
@@ -81,7 +81,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const logout = () => {
     setUser(null)
-    localStorage.removeItem('vit-user')
+    localStorage.removeItem('bmsit-user')
   }
 
   const toggleTheme = () => {
@@ -89,10 +89,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       const next = !prev
       if (next) {
         document.documentElement.classList.add('dark')
-        localStorage.setItem('vit-theme', 'dark')
+        localStorage.setItem('bmsit-theme', 'dark')
       } else {
         document.documentElement.classList.remove('dark')
-        localStorage.setItem('vit-theme', 'light')
+        localStorage.setItem('bmsit-theme', 'light')
       }
       return next
     })

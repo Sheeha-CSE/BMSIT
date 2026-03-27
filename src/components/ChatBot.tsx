@@ -8,14 +8,14 @@ interface Message {
 }
 
 const botResponses: Record<string, string> = {
-  default: "Hi! I'm VIT's AI assistant. I can help you with admissions, courses, placements, campus life, and more. What would you like to know?",
-  admission: "For admissions at VIT, you need to have 10+2 with PCM and a valid JEE Main score. Apply online at vit.edu.in. Admission helpline: 1800-XXX-XXXX.",
-  course: "VIT offers B.Tech in CSE, ECE, ME, CE, IT, and EE. We also offer M.Tech and Ph.D programs. Visit our Courses page for details.",
-  placement: "VIT has an 88% placement rate with average package of 8.6 LPA and highest of 42 LPA (Google). 120+ companies visit annually.",
-  fee: "B.Tech fee is Rs 1.2 Lakhs per year. SC/ST students get fee concession. Scholarships available for merit students.",
-  hostel: "VIT has separate hostels for boys and girls with 2000+ capacity. AC and non-AC options available. Apply through student portal.",
-  faculty: "VIT has 100+ qualified faculty members with Ph.D from IITs and NITs. Faculty-student ratio is 1:15.",
-  contact: "Contact us at info@vit.edu.in or +91 20 1234 5678. Address: 123 Knowledge Park, Tech City, Maharashtra 411001.",
+  default: "Hi! I'm BMSIT's AI assistant. I can help you with admissions, courses, placements, campus life, and more. What would you like to know?",
+  admission: "For admissions at BMSIT, you need to have 10+2 with PCM and a valid JEE Main score. Apply online at bmsit.edu.in/apply. Admission helpline: 1800-BMSIT-01.",
+  course: "BMSIT offers B.Tech in CSE, ECE, Mechanical, Civil, IT, EEE, and Aerospace. We also offer M.Tech and Ph.D programs. Visit our Courses page for details.",
+  placement: "BMSIT has an 92% placement rate with average package of 9.2 LPA and highest of 45 LPA (leading tech companies). 150+ companies visit annually.",
+  fee: "B.Tech fee is Rs 1.5 Lakhs per year. SC/ST students get fee concession. Merit-based scholarships available for top performers.",
+  hostel: "BMSIT has separate hostels for boys and girls with 2500+ capacity. AC and non-AC options available. Apply through student portal.",
+  faculty: "BMSIT has 120+ qualified faculty members with Ph.D from IITs, NITs and international universities. Faculty-student ratio is 1:13.",
+  contact: "Contact us at info@bmsit.edu.in or +91 80 4321 0000. Address: CVR Campus, Narasaraopet Road, Hyderabad, Telangana 500074.",
 }
 
 function getResponse(msg: string): string {
@@ -64,7 +64,7 @@ export function ChatBot() {
                 <Bot size={16} className="text-[#1e3a5f]" />
               </div>
               <div>
-                <p className="font-semibold text-sm">VIT AI Assistant</p>
+                <p className="font-semibold text-sm">BMSIT AI Assistant</p>
                 <p className="text-xs text-green-300">● Online</p>
               </div>
             </div>

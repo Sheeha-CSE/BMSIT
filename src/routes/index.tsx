@@ -35,47 +35,47 @@ function HomePage() {
   const latestAnnouncements = announcements.slice(0, 5)
 
   const campusImages = [
-    'https://images.unsplash.com/photo-1571260899321-4d8ecf77b99f?auto=format&fit=crop&w=1350&q=80',
-    'https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1350&q=80',
-    'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1350&q=80',
+    'https://source.unsplash.com/1350x900/?education,academics',
   ]
   const [activeImage, setActiveImage] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveImage(prev => (prev + 1) % campusImages.length)
-    }, 8000)
+    }, 3000)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <div className="dark:bg-slate-900">
-      {/* Full-screen Campus Image Slideshow */}
+      {/* Full-screen Campus Image Slideshow with 4 Images */}
       <section className="relative h-screen overflow-hidden bg-gray-900">
-        <div
-          className="absolute inset-0 h-full w-full transition-all duration-1000 ease-in-out"
-          style={{
-            backgroundImage: `url(${campusImages[activeImage]})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
+        {campusImages.map((img, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ease-in-out ${
+              idx === activeImage ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `url(${img})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Welcome to Our Campus Life</h1>
           <p className="mt-3 text-lg md:text-2xl text-gray-200 max-w-2xl">Experience Learning, Fun, and Growth</p>
-          <button
-            onClick={() => document.querySelector('#main-content')?.scrollIntoView({ behavior: 'smooth' })}
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-amber-500 px-8 py-3 text-sm font-semibold text-white shadow-lg hover:bg-amber-400 transition-all"
-          >
-            Explore More
-          </button>
-          <div className="absolute bottom-8 flex gap-2">
+          <div className="absolute bottom-12 flex gap-2 items-center justify-center">
             {campusImages.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveImage(i)}
-                className={`w-3 h-3 rounded-full transition-all ${i === activeImage ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/70'}`}
+                className={`transition-all ${i === activeImage ? 'bg-white w-8 h-3 rounded-full' : 'bg-white/50 w-3 h-3 rounded-full hover:bg-white/70'}`}
               />
             ))}
           </div>
@@ -182,45 +182,10 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Departments & Events Grid */}
+      {/* Events & Announcements Section */}
       <section className="py-14 px-4 bg-gray-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Departments */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-[#1e3a5f] dark:text-white">Our Departments</h2>
-                <Link to="/courses" className="text-sm text-amber-600 hover:text-amber-500 flex items-center gap-1">
-                  View All <ChevronRight size={14} />
-                </Link>
-              </div>
-              <div className="mb-6 text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                <p><strong>Core Engineering Departments:</strong> CSE, ISE, AI & ML, ECE, ETE, EEE, Mechanical, Civil, CSBS</p>
-                <p><strong>Support & Research Departments:</strong> Mathematics, Physics, Chemistry, Humanities</p>
-                <p><strong>PG & Other Departments:</strong> MBA, MCA, M.Tech (CSE, Cyber Security, VLSI, etc.)</p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {departments.map(dept => (
-                  <Link key={dept.id} to="/courses" className="card-hover block p-5 rounded-2xl bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 hover:border-[#1e3a5f] dark:hover:border-amber-400 group transition-all">
-                    <div className="flex items-start gap-3">
-                      <span className="text-3xl">{dept.icon}</span>
-                      <div>
-                        <h3 className="font-bold text-[#1e3a5f] dark:text-white text-sm">{dept.name}</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">{dept.description}</p>
-                        <div className="flex gap-3 mt-2">
-                          <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">{dept.students} Students</span>
-                          <span className="text-xs text-gray-400">·</span>
-                          <span className="text-xs text-green-600 dark:text-green-400 font-medium">{dept.faculty} Faculty</span>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Right column */}
-            <div className="space-y-6">
+          <div className="space-y-6">
               {/* Upcoming Events */}
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -260,7 +225,6 @@ function HomePage() {
                   ))}
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </section>
