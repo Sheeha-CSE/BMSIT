@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { AnnouncementTicker } from '@/components/AnnouncementTicker'
 import { ImageSlider } from '@/components/ImageSlider'
+import { Component as VaporizeTextEffect } from '@/components/ui/vapour-text-effect'
 import { departments, events, placementStats, announcements, faculty } from '@/data/mockData'
 import {
   GraduationCap, Users, Building2, Trophy, ArrowRight, Calendar,
@@ -91,6 +92,10 @@ function HomePage() {
           animation: slide-in 0.3s ease-in;
         }
       `}</style>
+
+      <section className="relative h-screen">
+        <VaporizeTextEffect />
+      </section>
 
       <AnnouncementTicker />
       <ImageSlider />
