@@ -52,48 +52,7 @@ function HomePage() {
 
   return (
     <div className="dark:bg-slate-900">
-      {/* Full-screen Campus Image Slideshow with 4 Images */}
-      <section className="relative h-screen overflow-hidden bg-gray-900">
-        {campusImages.map((img, idx) => (
-          <div
-            key={idx}
-            className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ease-in-out ${
-              idx === activeImage ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{
-              backgroundImage: `url(${img})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Welcome to Our Campus Life</h1>
-          <p className="mt-3 text-lg md:text-2xl text-gray-200 max-w-2xl">Experience Learning, Fun, and Growth</p>
-          <div className="absolute bottom-12 flex gap-2 items-center justify-center">
-            {campusImages.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveImage(i)}
-                className={`transition-all ${i === activeImage ? 'bg-white w-8 h-3 rounded-full' : 'bg-white/50 w-3 h-3 rounded-full hover:bg-white/70'}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <style>{`
-        @keyframes slide-in {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        section.hero {
-          animation: slide-in 0.3s ease-in;
-        }
-      `}</style>
-
-      <section className="relative h-screen">
+      <section className="relative h-screen overflow-hidden">
         <VaporizeTextEffect />
       </section>
 
