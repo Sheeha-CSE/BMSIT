@@ -4,35 +4,27 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const slides = [
   {
     id: 1,
-    title: 'Excellence in Engineering Education',
-    subtitle: 'NAAC A+ | NBA Accredited | AICTE Approved',
-    description: 'Shaping the innovators of tomorrow with world-class facilities and faculty.',
-    bg: 'from-[#1e3a5f] to-[#2a5298]',
-    badge: '🏆 NIRF Ranked #42',
+    title: 'BMSIT Campus Life',
+    subtitle: 'Modern Campus in Yelahanka, Bengaluru',
+    description: 'Explore our expansive green campus, state-of-the-art labs and academic facilities.',
+    image: 'https://images.unsplash.com/photo-1519741498076-1cd4d7faf95f?auto=format&fit=crop&w=1500&q=80',
+    badge: '🏛️ Campus Tour',
   },
   {
     id: 2,
-    title: 'Admissions Open 2024-25',
-    subtitle: 'B.Tech | M.Tech | Ph.D Programs',
-    description: 'Apply now for B.Tech in CSE, ECE, ME, CE, IT, and EE. Scholarships available.',
-    bg: 'from-[#1a1a2e] to-[#16213e]',
-    badge: '🎓 Apply Now',
+    title: 'Vibrant Student Community',
+    subtitle: 'Clubs, Fests, Sports and Innovation',
+    description: 'A thriving student ecosystem with hackathons, cultural fests and industry mentorship.',
+    image: 'https://images.unsplash.com/photo-1559757175-57080f8ff1b1?auto=format&fit=crop&w=1500&q=80',
+    badge: '🎉 Campus Life',
   },
   {
     id: 3,
-    title: '88% Placement Rate',
-    subtitle: 'Average Package: 8.6 LPA | Highest: 42 LPA',
-    description: '120+ companies visit campus every year including Google, Microsoft, Amazon, and TCS.',
-    bg: 'from-[#0f2027] to-[#203a43]',
-    badge: '💼 View Placements',
-  },
-  {
-    id: 4,
-    title: 'National Hackathon CodeStorm 2024',
-    subtitle: 'Cash Prizes Worth ₹5 Lakhs',
-    description: '36-hour hackathon with problem statements from leading industry partners. Register today!',
-    bg: 'from-[#360033] to-[#0b8793]',
-    badge: '💻 Register Now',
+    title: 'Academic Excellence',
+    subtitle: 'Strong Faculty, Top Placement Record',
+    description: 'BMSIT nurtures employability with industry-led curriculum and outstanding placement support.',
+    image: 'https://images.unsplash.com/photo-1581092335758-588f9fadd8b9?auto=format&fit=crop&w=1500&q=80',
+    badge: '🎓 Apply Now',
   },
 ]
 
@@ -54,13 +46,18 @@ export function ImageSlider() {
       {slides.map((slide, i) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 bg-gradient-to-br ${slide.bg} flex items-center justify-center transition-opacity duration-1000 ${i === current ? 'opacity-100 slide-active' : 'opacity-0'}`}
+          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${i === current ? 'opacity-100 slide-active' : 'opacity-0'}`}
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${slide.image}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
         >
           {/* Background pattern */}
-          <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 25px 25px, white 2px, transparent 0)',
-              backgroundSize: '50px 50px',
+              backgroundImage: 'radial-gradient(circle at 25px 25px, white 3px, transparent 0)',
+              backgroundSize: '80px 80px',
             }} />
           </div>
 
